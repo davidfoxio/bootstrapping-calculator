@@ -11,30 +11,16 @@ import {
   Legend,
 } from 'recharts';
 
-export default function AnnualIncomeChart({ monthlyIncomeGrowth }) {
-  const monthlyIncome = [];
-  const yearlyIncome = [];
+export default function AnnualIncomeChart({ yearlyIncome }) {
   const data = [];
-  for (let i = 0; i < 133; i++) {
-    monthlyIncome.push(i * monthlyIncomeGrowth);
-  }
-  for (let i = 0; i < 120; i++) {
-    yearlyIncome.push(
-      monthlyIncome
-        .filter((figure, index) => index >= i && index < i + 12)
-        .reduce((accumulator, currentValue) => accumulator + currentValue)
-    );
-  }
-  console.log(yearlyIncome);
   yearlyIncome.forEach((element, index) =>
     data.push(
       Object.create({
-        name: index + 1,
+        name: index,
         Income: element,
       })
     )
   );
-  /*  */
   return (
     <div>
       <h1>Annual Income Chart</h1>
@@ -54,12 +40,12 @@ export default function AnnualIncomeChart({ monthlyIncomeGrowth }) {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Line type="monotone" dataKey="Income" stroke="#82ca9d" />
+        <Line type="monotone" dataKey="Income" stroke="#82ca9d" dot={false} />
       </LineChart>
     </div>
   );
 }
 
 AnnualIncomeChart.propTypes = {
-  monthlyIncomeGrowth: PropTypes.number,
+  yearlyIncome: PropTypes.array,
 };

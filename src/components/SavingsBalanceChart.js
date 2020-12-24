@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
@@ -8,6 +9,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
+  ReferenceLine,
 } from 'recharts';
 
 export default function SavingsBalanceChart({
@@ -15,44 +17,35 @@ export default function SavingsBalanceChart({
   monthlyOutgoings,
   monthlyIncomeGrowth,
   surrenderThreshold,
+  monthlyIncome,
 }) {
-  const data = [
-    {
-      name: 'Page A',
-      uv: monthlyIncomeGrowth,
-      pv: 2400,
-    },
-    {
-      name: 'Page B',
-      uv: 3000,
-      pv: 1398,
-    },
-    {
-      name: 'Page C',
-      uv: 2000,
-      pv: 9800,
-    },
-    {
-      name: 'Page D',
-      uv: 2780,
-      pv: 3908,
-    },
-    {
-      name: 'Page E',
-      uv: 1890,
-      pv: 4800,
-    },
-    {
-      name: 'Page F',
-      uv: 2390,
-      pv: 3800,
-    },
-    {
-      name: 'Page G',
-      uv: 3490,
-      pv: 4300,
-    },
-  ];
+  const data = [];
+  // runway
+  const runway = [];
+  for (let i = 0; i < 121; i++) {
+    runway.push(liquidSavings - i * monthlyOutgoings);
+  }
+
+  // balance
+  const balance = [];
+  for (let i = 0; i < 121; i++) {
+    const saved = monthlyIncome
+      .filter((figure, index) => index <= i)
+      .reduce((accumulator, currentValue) => accumulator + currentValue);
+    // eslint-disable-next-line no-unused-expressions
+    runway[i] ? balance.push(runway[i] + saved) : balance.push(saved);
+  }
+
+  balance.forEach((element, index) => {
+    const obj = Object.create({
+      name: index,
+      Balance: element,
+    });
+    return (
+      runway[index] >= 0 ? (obj.Runway = runway[index]) : '', data.push(obj)
+    );
+  });
+
   return (
     <div>
       <h1>Savings Balance Chart</h1>
@@ -72,13 +65,14 @@ export default function SavingsBalanceChart({
         <YAxis />
         <Tooltip />
         <Legend />
-        <Line
-          type="monotone"
-          dataKey="pv"
-          stroke="#8884d8"
-          activeDot={{ r: 8 }}
+        <Line type="monotone" dataKey="Runway" stroke="#d8d284" dot={false} />
+        <Line type="monotone" dataKey="Balance" stroke="#346de9" dot={false} />
+        <ReferenceLine
+          y={surrenderThreshold * monthlyOutgoings}
+          label="Surrender Threshold"
+          stroke="red"
+          strokeDasharray="3 3"
         />
-        <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
       </LineChart>
     </div>
   );
@@ -89,4 +83,5 @@ SavingsBalanceChart.propTypes = {
   monthlyOutgoings: PropTypes.number,
   monthlyIncomeGrowth: PropTypes.number,
   surrenderThreshold: PropTypes.number,
+  monthlyIncome: PropTypes.array,
 };

@@ -8,6 +8,8 @@ export default function ChartArea({
   monthlyOutgoings,
   monthlyIncomeGrowth,
   surrenderThreshold,
+  yearlyIncome,
+  monthlyIncome,
 }) {
   return (
     <div className="chart-area">
@@ -16,8 +18,13 @@ export default function ChartArea({
         monthlyOutgoings={monthlyOutgoings}
         monthlyIncomeGrowth={monthlyIncomeGrowth}
         surrenderThreshold={surrenderThreshold}
+        yearlyIncome={yearlyIncome}
+        monthlyIncome={monthlyIncome}
       />
-      <AnnualIncomeChart monthlyIncomeGrowth={monthlyIncomeGrowth} />
+      <AnnualIncomeChart
+        monthlyIncomeGrowth={monthlyIncomeGrowth}
+        yearlyIncome={yearlyIncome}
+      />
     </div>
   );
 }
@@ -27,4 +34,6 @@ ChartArea.propTypes = {
   monthlyOutgoings: PropTypes.number,
   monthlyIncomeGrowth: PropTypes.number,
   surrenderThreshold: PropTypes.number,
+  yearlyIncome: PropTypes.array,
+  monthlyIncome: PropTypes.array,
 };
