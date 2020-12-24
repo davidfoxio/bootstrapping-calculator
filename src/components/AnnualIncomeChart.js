@@ -1,20 +1,61 @@
+/* eslint-disable no-plusplus */
 import React from 'react';
-import * as d3 from 'd3';
 import PropTypes from 'prop-types';
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+} from 'recharts';
 
 export default function AnnualIncomeChart({ monthlyIncomeGrowth }) {
-  const drawChart = () => {
-    const data = [12, 5, 6, 6, 9, 10];
-
-    const svg = d3
-      .select('body')
-      .append('svg')
-      .attr('width', 700)
-      .attr('height', 300);
-  };
+  const monthlyIncome = [];
+  const yearlyIncome = [];
+  const data = [];
+  for (let i = 0; i < 133; i++) {
+    monthlyIncome.push(i * monthlyIncomeGrowth);
+  }
+  for (let i = 0; i < 120; i++) {
+    yearlyIncome.push(
+      monthlyIncome
+        .filter((figure, index) => index >= i && index < i + 12)
+        .reduce((accumulator, currentValue) => accumulator + currentValue)
+    );
+  }
+  console.log(yearlyIncome);
+  yearlyIncome.forEach((element, index) =>
+    data.push(
+      Object.create({
+        name: index + 1,
+        Income: element,
+      })
+    )
+  );
+  /*  */
   return (
     <div>
       <h1>Annual Income Chart</h1>
+      <LineChart
+        width={500}
+        height={300}
+        data={data}
+        margin={{
+          top: 5,
+          right: 30,
+          left: 20,
+          bottom: 5,
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Line type="monotone" dataKey="Income" stroke="#82ca9d" />
+      </LineChart>
     </div>
   );
 }
