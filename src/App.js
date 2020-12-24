@@ -1,5 +1,6 @@
 /* eslint-disable no-plusplus */
 import React, { useState } from 'react';
+import styled from 'styled-components';
 // Components
 import ChartArea from './components/ChartArea';
 import InputForm from './components/InputForm';
@@ -23,26 +24,43 @@ export default function App() {
     );
   }
 
+  const StyledApp = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: flex-start;
+    @media only screen and (max-width: 755px) {
+      .input-figures {
+        width: 100%;
+      }
+    }
+  `;
+
   return (
     <div className="App">
-      <InputForm
-        liquidSavings={liquidSavings}
-        setLiquidSavings={setLiquidSavings}
-        monthlyOutgoings={monthlyOutgoings}
-        setMonthlyOutgoings={setMonthlyOutgoings}
-        monthlyIncomeGrowth={monthlyIncomeGrowth}
-        setMonthlyIncomeGrowth={setMonthlyIncomeGrowth}
-        surrenderThreshold={surrenderThreshold}
-        setSurrenderThreshold={setSurrenderThreshold}
-      />
-      <ChartArea
-        liquidSavings={liquidSavings}
-        monthlyOutgoings={monthlyOutgoings}
-        monthlyIncomeGrowth={monthlyIncomeGrowth}
-        surrenderThreshold={surrenderThreshold}
-        yearlyIncome={yearlyIncome}
-        monthlyIncome={monthlyIncome}
-      />
+      <StyledApp>
+        <InputForm
+          liquidSavings={liquidSavings}
+          setLiquidSavings={setLiquidSavings}
+          monthlyOutgoings={monthlyOutgoings}
+          setMonthlyOutgoings={setMonthlyOutgoings}
+          monthlyIncomeGrowth={monthlyIncomeGrowth}
+          setMonthlyIncomeGrowth={setMonthlyIncomeGrowth}
+          surrenderThreshold={surrenderThreshold}
+          setSurrenderThreshold={setSurrenderThreshold}
+        />
+        <ChartArea
+          liquidSavings={liquidSavings}
+          monthlyOutgoings={monthlyOutgoings}
+          monthlyIncomeGrowth={monthlyIncomeGrowth}
+          surrenderThreshold={surrenderThreshold}
+          yearlyIncome={yearlyIncome}
+          monthlyIncome={monthlyIncome}
+        />
+      </StyledApp>
     </div>
   );
 }

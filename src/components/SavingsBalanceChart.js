@@ -15,7 +15,6 @@ import {
 export default function SavingsBalanceChart({
   liquidSavings,
   monthlyOutgoings,
-  monthlyIncomeGrowth,
   surrenderThreshold,
   monthlyIncome,
 }) {
@@ -81,7 +80,6 @@ export default function SavingsBalanceChart({
 SavingsBalanceChart.propTypes = {
   liquidSavings: PropTypes.number,
   monthlyOutgoings: PropTypes.number,
-  monthlyIncomeGrowth: PropTypes.number,
   surrenderThreshold: PropTypes.number,
   monthlyIncome: PropTypes.array,
 };

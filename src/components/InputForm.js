@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 export default function InputForm({
   liquidSavings,
@@ -27,9 +28,21 @@ export default function InputForm({
     setSurrenderThreshold(e.target.value);
   };
 
+  const StyledForm = styled.form`
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  `;
+
   return (
     <div className="input-figures">
-      <form>
+      <h1>Figures</h1>
+      <StyledForm>
         <label htmlFor="liquid-savings">
           Liquid Savings
           <input
@@ -66,7 +79,7 @@ export default function InputForm({
             onChange={updateSurrenderThreshold}
           />
         </label>
-      </form>
+      </StyledForm>
     </div>
   );
 }
