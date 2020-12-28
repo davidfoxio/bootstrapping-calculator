@@ -47,7 +47,7 @@ export default function SavingsBalanceChart({
 
   return (
     <div>
-      <h1>Savings Balance Chart</h1>
+      <h2>Savings Balance Chart</h2>
       <LineChart
         width={500}
         height={300}
@@ -61,7 +61,7 @@ export default function SavingsBalanceChart({
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
-        <YAxis />
+        <YAxis type="number" domain={[0, 'dataMax']} allowDataOverflow />
         <Tooltip />
         <Legend />
         <Line type="monotone" dataKey="Runway" stroke="#d8d284" dot={false} />

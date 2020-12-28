@@ -2,6 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+`;
+
 export default function InputForm({
   liquidSavings,
   setLiquidSavings,
@@ -13,41 +24,31 @@ export default function InputForm({
   setSurrenderThreshold,
 }) {
   const updateLiquidSavings = (e) => {
-    setLiquidSavings(e.target.value);
+    setLiquidSavings(parseInt(e.target.value));
   };
 
   const updateMonthlyOutgoings = (e) => {
-    setMonthlyOutgoings(e.target.value);
+    setMonthlyOutgoings(parseInt(e.target.value));
   };
 
   const updateMonthlyIncomeGrowth = (e) => {
-    setMonthlyIncomeGrowth(e.target.value);
+    setMonthlyIncomeGrowth(parseInt(e.target.value));
   };
 
   const updateSurrenderThreshold = (e) => {
-    setSurrenderThreshold(e.target.value);
+    setSurrenderThreshold(parseInt(e.target.value));
   };
-
-  const StyledForm = styled.form`
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    label {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-  `;
 
   return (
     <div className="input-figures">
-      <h1>Figures</h1>
+      <h2>Figures</h2>
       <StyledForm>
         <label htmlFor="liquid-savings">
           Liquid Savings
           <input
+            name="savings"
             id="liquid-savings"
-            type="number"
+            type="text"
             value={liquidSavings}
             onChange={updateLiquidSavings}
           />
@@ -55,8 +56,9 @@ export default function InputForm({
         <label htmlFor="monthly-outgoings">
           Monthly Cash Outflow
           <input
+            name="outgoings"
             id="monthly-outgoings"
-            type="number"
+            type="text"
             value={monthlyOutgoings}
             onChange={updateMonthlyOutgoings}
           />
@@ -64,8 +66,9 @@ export default function InputForm({
         <label htmlFor="monthly-income-growth">
           Monthly Income Growth
           <input
+            name="income"
             id="monthly-income-growth"
-            type="number"
+            type="text"
             value={monthlyIncomeGrowth}
             onChange={updateMonthlyIncomeGrowth}
           />
@@ -73,8 +76,9 @@ export default function InputForm({
         <label htmlFor="surrender-threshold">
           Surrender Threshold
           <input
+            name="surrender-threshold"
             id="monthly-income-growth"
-            type="number"
+            type="text"
             value={surrenderThreshold}
             onChange={updateSurrenderThreshold}
           />

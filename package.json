@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@csstools/normalize.css": "^11.0.1",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.5.0",
     "autoprefixer": "^9.8.6",
+    "normalize.css": "^8.0.1",
     "postcss": "^7.0.35",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",

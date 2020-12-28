@@ -23,7 +23,7 @@ export default function AnnualIncomeChart({ yearlyIncome }) {
   );
   return (
     <div>
-      <h1>Annual Income Chart</h1>
+      <h2>Annual Income Chart</h2>
       <LineChart
         width={500}
         height={300}
@@ -37,7 +37,7 @@ export default function AnnualIncomeChart({ yearlyIncome }) {
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
-        <YAxis />
+        <YAxis type="number" domain={[0, 0]} />
         <Tooltip />
         <Legend />
         <Line type="monotone" dataKey="Income" stroke="#82ca9d" dot={false} />
