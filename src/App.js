@@ -101,6 +101,42 @@ export default function App() {
           monthlyIncome={monthlyIncome}
         />
       </InputChartContainer>
+      <h1>About the Bootstrapping Calculator</h1>
+      <p className="about-text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
+        architecto quidem maiores eaque voluptate quo error dolor delectus,
+        dolorum quas ab ipsa maxime asperiores, officia voluptatum nemo ducimus
+        unde ut? Impedit, natus doloribus, ea exercitationem labore tempore
+        numquam quia quasi similique quam porro provident vero expedita facilis,
+        quibusdam sapiente laborum facere optio asperiores necessitatibus.
+        Perferendis consectetur tempora distinctio reiciendis adipisci. Placeat
+        delectus molestias doloremque iste et ipsum pariatur quasi eaque vero
+        dolorum architecto, quod corrupti? Eaque, saepe, laborum esse debitis
+        architecto unde perspiciatis reiciendis velit consequatur eligendi atque
+        illo sapiente. Pariatur corrupti quo libero modi minus sequi dignissimos
+        alias ipsam a ipsa, autem eveniet at exercitationem eligendi voluptatem
+        velit sed repellat error! Dicta alias earum dolor, dolorum in harum
+        beatae? Ullam quo odit quod dolores eligendi provident laboriosam vero
+        ipsum consequatur distinctio est labore, dolorem reiciendis autem culpa
+        sunt omnis adipisci commodi accusantium sit recusandae nostrum eveniet?
+        Aliquid, nulla amet. Iure similique minima neque illo nam expedita
+        recusandae id facilis ex, qui aut distinctio, ratione eveniet enim sunt
+        reprehenderit eligendi delectus dolor eius error obcaecati cumque.
+        Voluptas adipisci magnam illum. Corporis, fuga eveniet rem illum animi
+        nostrum ullam quisquam laudantium sint non! Nam et natus, accusamus
+        dignissimos expedita, alias, iure animi vel numquam eius perferendis?
+        Similique deserunt error officiis blanditiis? Expedita explicabo earum
+        soluta accusamus vel asperiores, quae illo natus provident? Dolor, eum
+        inventore, voluptas corrupti temporibus quasi corporis magni qui
+        repellendus quo consequuntur, excepturi recusandae cum non alias
+        perspiciatis. Fugiat incidunt dolor omnis illum. Ipsum ratione, soluta
+        adipisci debitis dolores et quasi voluptatum dolorum natus illum
+        eligendi asperiores quas odio nulla ullam iste itaque quia quidem sequi.
+        Id, distinctio! Eveniet provident blanditiis harum nobis voluptatum
+        voluptates ducimus itaque repudiandae repellat commodi nulla enim iure
+        obcaecati distinctio vero magnam in corrupti molestias, sapiente dolore
+        pariatur quis tenetur? Maxime, suscipit soluta.
+      </p>
       <BackLink href="http://davidfox.io" target="_blank">
         <img src={me} alt="David Fox" /> Made by David Fox
       </BackLink>

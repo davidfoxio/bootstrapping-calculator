@@ -11,6 +11,13 @@ const StyledForm = styled.form`
     flex-direction: column;
     gap: 0.5rem;
   }
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    appearance: none;
+  }
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
 `;
 
 export default function InputForm({
@@ -24,19 +31,19 @@ export default function InputForm({
   setSurrenderThreshold,
 }) {
   const updateLiquidSavings = (e) => {
-    setLiquidSavings(parseInt(e.target.value));
+    setLiquidSavings(e.target.value);
   };
 
   const updateMonthlyOutgoings = (e) => {
-    setMonthlyOutgoings(parseInt(e.target.value));
+    setMonthlyOutgoings(e.target.value);
   };
 
   const updateMonthlyIncomeGrowth = (e) => {
-    setMonthlyIncomeGrowth(parseInt(e.target.value));
+    setMonthlyIncomeGrowth(e.target.value);
   };
 
   const updateSurrenderThreshold = (e) => {
-    setSurrenderThreshold(parseInt(e.target.value));
+    setSurrenderThreshold(e.target.value);
   };
 
   return (
@@ -48,7 +55,7 @@ export default function InputForm({
           <input
             name="savings"
             id="liquid-savings"
-            type="text"
+            type="number"
             value={liquidSavings}
             onChange={updateLiquidSavings}
           />
@@ -58,7 +65,7 @@ export default function InputForm({
           <input
             name="outgoings"
             id="monthly-outgoings"
-            type="text"
+            type="number"
             value={monthlyOutgoings}
             onChange={updateMonthlyOutgoings}
           />
@@ -68,7 +75,7 @@ export default function InputForm({
           <input
             name="income"
             id="monthly-income-growth"
-            type="text"
+            type="number"
             value={monthlyIncomeGrowth}
             onChange={updateMonthlyIncomeGrowth}
           />
@@ -78,7 +85,7 @@ export default function InputForm({
           <input
             name="surrender-threshold"
             id="monthly-income-growth"
-            type="text"
+            type="number"
             value={surrenderThreshold}
             onChange={updateSurrenderThreshold}
           />
