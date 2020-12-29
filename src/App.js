@@ -9,15 +9,30 @@ import '@csstools/normalize.css';
 import GlobalStyles from './styles/GlobalStyles';
 import me from './assets/me.png';
 
+const NotesContainer = styled.div`
+  padding: 1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+const InfoContainer = styled.div`
+  padding: 1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5rem;
+`;
+
 const InputChartContainer = styled.div`
   display: flex;
   flex-direction: row;
   gap: 2rem;
   margin: 1rem;
-  margin-bottom: 5rem;
   flex-wrap: wrap;
   justify-content: center;
   align-self: flex-start;
+  padding: 1rem;
   .input-figures {
     max-width: 300px;
   }
@@ -104,42 +119,56 @@ export default function App() {
           monthlyIncome={monthlyIncome}
         />
       </InputChartContainer>
-      <h1>About the Bootstrapping Calculator</h1>
-      <p className="about-text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-        architecto quidem maiores eaque voluptate quo error dolor delectus,
-        dolorum quas ab ipsa maxime asperiores, officia voluptatum nemo ducimus
-        unde ut? Impedit, natus doloribus, ea exercitationem labore tempore
-        numquam quia quasi similique quam porro provident vero expedita facilis,
-        quibusdam sapiente laborum facere optio asperiores necessitatibus.
-        Perferendis consectetur tempora distinctio reiciendis adipisci. Placeat
-        delectus molestias doloremque iste et ipsum pariatur quasi eaque vero
-        dolorum architecto, quod corrupti? Eaque, saepe, laborum esse debitis
-        architecto unde perspiciatis reiciendis velit consequatur eligendi atque
-        illo sapiente. Pariatur corrupti quo libero modi minus sequi dignissimos
-        alias ipsam a ipsa, autem eveniet at exercitationem eligendi voluptatem
-        velit sed repellat error! Dicta alias earum dolor, dolorum in harum
-        beatae? Ullam quo odit quod dolores eligendi provident laboriosam vero
-        ipsum consequatur distinctio est labore, dolorem reiciendis autem culpa
-        sunt omnis adipisci commodi accusantium sit recusandae nostrum eveniet?
-        Aliquid, nulla amet. Iure similique minima neque illo nam expedita
-        recusandae id facilis ex, qui aut distinctio, ratione eveniet enim sunt
-        reprehenderit eligendi delectus dolor eius error obcaecati cumque.
-        Voluptas adipisci magnam illum. Corporis, fuga eveniet rem illum animi
-        nostrum ullam quisquam laudantium sint non! Nam et natus, accusamus
-        dignissimos expedita, alias, iure animi vel numquam eius perferendis?
-        Similique deserunt error officiis blanditiis? Expedita explicabo earum
-        soluta accusamus vel asperiores, quae illo natus provident? Dolor, eum
-        inventore, voluptas corrupti temporibus quasi corporis magni qui
-        repellendus quo consequuntur, excepturi recusandae cum non alias
-        perspiciatis. Fugiat incidunt dolor omnis illum. Ipsum ratione, soluta
-        adipisci debitis dolores et quasi voluptatum dolorum natus illum
-        eligendi asperiores quas odio nulla ullam iste itaque quia quidem sequi.
-        Id, distinctio! Eveniet provident blanditiis harum nobis voluptatum
-        voluptates ducimus itaque repudiandae repellat commodi nulla enim iure
-        obcaecati distinctio vero magnam in corrupti molestias, sapiente dolore
-        pariatur quis tenetur? Maxime, suscipit soluta.
-      </p>
+      <NotesContainer>
+        <h2>Notes</h2>
+        <p>
+          <strong>Liquid Savings - </strong>
+          The total amount of money you can access. If some of this money
+          becomes taxable when accessed, subtract the tax from it. If you
+          include retirement funds, also subtract any early withdrawal fees.
+        </p>
+        <p>
+          <strong>Monthly Cash Outflow - </strong>
+          The average monthly outflows from your bank account. This includes all
+          personal expenses and any other payment obligations, such as loan
+          payments. If you receive any fixed income from investments or rent,
+          subtract it from the outflow.
+        </p>
+        <p>
+          <strong>Monthly Income Growth - </strong>
+          The amount of new income you expect to add each month from your
+          bootstrapped activities.
+        </p>
+        <p>
+          <strong>Surrender Threshold - </strong>
+          The number of months of covered expenses at which point the venture
+          gets abandoned. Use this threshold to ensure that you can fall back to
+          an alternative way of making ends meet, such as getting back on the
+          job market.
+        </p>
+      </NotesContainer>
+      <InfoContainer>
+        <h2>About the Bootstrapping Calculator</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ipsam ab
+          quidem neque placeat quos consectetur reprehenderit labore, accusamus
+          minima iure voluptatem maiores ut quasi illo numquam error dolore
+          odit? Ad temporibus sit autem veniam atque adipisci voluptatem
+          quibusdam. Ratione necessitatibus expedita dicta consequuntur
+          recusandae at, obcaecati neque quia esse consectetur? Itaque hic, unde
+          fuga laborum sit id omnis ipsam. Consectetur blanditiis ipsum placeat
+          aperiam omnis nisi sapiente tempora culpa obcaecati adipisci, velit
+          saepe nihil est soluta, molestias nobis maxime impedit animi tenetur
+          ratione esse distinctio. Expedita harum suscipit ullam? Ab dolorum
+          velit, omnis cupiditate maiores sapiente labore! Iusto ut facilis
+          quidem commodi labore rem delectus at, itaque nesciunt, praesentium
+          modi veniam quibusdam provident eum veritatis voluptate doloribus
+          placeat voluptatibus. Est accusamus repellendus praesentium placeat
+          expedita esse autem ducimus voluptas omnis molestias beatae,
+          voluptatum hic temporibus laborum architecto nam molestiae animi. A
+          quos aperiam est error et blanditiis expedita! Voluptatibus.
+        </p>
+      </InfoContainer>
       <BackLink href="https://twitter.com/davidfoxio" target="_blank">
         <img src={me} alt="David Fox" /> Made by David Fox
       </BackLink>

@@ -10,10 +10,14 @@ const GlobalStyles = createGlobalStyle`
   h1 {
       text-align: center;
   }
-  .about-text {
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+  @media only screen and (max-width: 755px) {
+    h2 {
+      text-align: center;
+    }
+    h1 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
   }
 `;
 
