@@ -57,6 +57,9 @@ const GlobalStyles = createGlobalStyle`
   .chart-title {
     text-align: center;
   }
+  .socialShare {
+    text-align: center;
+  }
   @media only screen and (max-width: 755px) {
     h2 {
       text-align: center;

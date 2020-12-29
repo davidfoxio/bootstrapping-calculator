@@ -41,12 +41,13 @@ const InputChartContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   gap: 2rem;
-  flex-wrap: wrap;
   justify-content: center;
   align-self: flex-start;
   width: 100%;
   overflow: hidden;
   .input-figures {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     max-width: 300px;
     border-radius: 1em 0 1em 0;
     background-image: linear-gradient(
@@ -64,7 +65,8 @@ const InputChartContainer = styled.div`
     .savingsBalanceChart {
       width: 100%;
       height: 500px;
-      margin-bottom: 5rem;
+      margin-bottom: 2rem;
+      margin-top: 0.5rem;
     }
     @media only screen and (max-width: 755px) {
       width: 90%;
@@ -207,6 +209,16 @@ export default function App() {
           screenName="dvassallo"
           options={{ height: 500, width: '100%' }}
         />
+        <h2 className="socialShare">
+          Found this useful? Please Share 😀{' '}
+          <TwitterShareButton
+            url="https://bootstrappingcalculator.com/"
+            options={{
+              text: `Look at this awesome bootstrapping calculator! \n \nFigure out if you have enough savings before taking the plunge to quit your job:`,
+              via: 'davidfoxio',
+            }}
+          />
+        </h2>
       </InfoContainer>
       <BackLink href="https://twitter.com/davidfoxio" target="_blank">
         <img src={me} alt="David Fox" /> Made by David Fox
