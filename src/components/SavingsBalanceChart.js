@@ -47,7 +47,7 @@ export default function SavingsBalanceChart({
 
   return (
     <div>
-      <h2>Savings Balance Chart</h2>
+      <h2 className="chart-title">Savings Balance Chart</h2>
       <LineChart
         width={500}
         height={300}

@@ -46,6 +46,9 @@ const GlobalStyles = createGlobalStyle`
       rgba(20, 175, 20, 0.25)
     );
   }
+  .chart-title {
+    text-align: center;
+  }
   @media only screen and (max-width: 755px) {
     h2 {
       text-align: center;

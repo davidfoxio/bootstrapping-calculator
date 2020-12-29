@@ -23,7 +23,7 @@ export default function AnnualIncomeChart({ yearlyIncome }) {
   );
   return (
     <div>
-      <h2>Annual Income Chart</h2>
+      <h2 className="chart-title">Annual Income Chart</h2>
       <LineChart
         width={500}
         height={300}
