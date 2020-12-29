@@ -40,7 +40,12 @@ export default function AnnualIncomeChart({ yearlyIncome }) {
         <YAxis type="number" domain={[0, 0]} />
         <Tooltip />
         <Legend />
-        <Line type="monotone" dataKey="Income" stroke="#82ca9d" dot={false} />
+        <Line
+          type="monotone"
+          dataKey="Income"
+          stroke="rgba(20, 175, 20)"
+          dot={false}
+        />
       </LineChart>
     </div>
   );

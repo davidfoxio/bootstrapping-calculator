@@ -1,6 +1,18 @@
 /* eslint-disable no-plusplus */
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import {
+  TwitterTimelineEmbed,
+  TwitterShareButton,
+  TwitterFollowButton,
+  TwitterHashtagButton,
+  TwitterMentionButton,
+  TwitterTweetEmbed,
+  TwitterMomentShare,
+  TwitterDMButton,
+  TwitterVideoEmbed,
+  TwitterOnAirButton,
+} from 'react-twitter-embed';
 // Components
 import ChartArea from './components/ChartArea';
 import InputForm from './components/InputForm';
@@ -35,6 +47,14 @@ const InputChartContainer = styled.div`
   padding: 1rem;
   .input-figures {
     max-width: 300px;
+    border-radius: 1em 0 1em 0;
+    background-image: linear-gradient(
+      -100deg,
+      rgba(235, 235, 235, 0.15),
+      rgba(235, 235, 235, 0.8) 100%,
+      rgba(235, 235, 235, 0.25)
+    );
+    padding: 1rem;
   }
   input {
     padding: 0.5rem;
@@ -150,24 +170,28 @@ export default function App() {
       <InfoContainer>
         <h2>About the Bootstrapping Calculator</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ipsam ab
-          quidem neque placeat quos consectetur reprehenderit labore, accusamus
-          minima iure voluptatem maiores ut quasi illo numquam error dolore
-          odit? Ad temporibus sit autem veniam atque adipisci voluptatem
-          quibusdam. Ratione necessitatibus expedita dicta consequuntur
-          recusandae at, obcaecati neque quia esse consectetur? Itaque hic, unde
-          fuga laborum sit id omnis ipsam. Consectetur blanditiis ipsum placeat
-          aperiam omnis nisi sapiente tempora culpa obcaecati adipisci, velit
-          saepe nihil est soluta, molestias nobis maxime impedit animi tenetur
-          ratione esse distinctio. Expedita harum suscipit ullam? Ab dolorum
-          velit, omnis cupiditate maiores sapiente labore! Iusto ut facilis
-          quidem commodi labore rem delectus at, itaque nesciunt, praesentium
-          modi veniam quibusdam provident eum veritatis voluptate doloribus
-          placeat voluptatibus. Est accusamus repellendus praesentium placeat
-          expedita esse autem ducimus voluptas omnis molestias beatae,
-          voluptatum hic temporibus laborum architecto nam molestiae animi. A
-          quos aperiam est error et blanditiis expedita! Voluptatibus.
+          The Bootstrapping Calculator was created by Daniel Vassallo. It is a
+          very simple spreadsheet that he used to figure out if he had enough
+          savings before taking the plunge to quit his job and live off his
+          savings while bootstrapping his own business. It is intentionally very
+          simple: There are only 4 parameters, and the only one that requires
+          guessing is the income. By tweaking that value, he could get an income
+          target to aim for, and was assured that his venture would survive if
+          he met it.
         </p>
+        <p>
+          In this project, I've built the bootstrapping calculator as a web app,
+          using React. I'm a fan of Daniel's work and philosophies, so this is
+          my homage to him and my way of saying thanks for sharing his story. If
+          you're interested in finding out more about Daniel, I'd recommend
+          following him on twitter. You can see a feed of his most recent tweets
+          below:
+        </p>
+        <TwitterTimelineEmbed
+          sourceType="profile"
+          screenName="dvassallo"
+          options={{ height: 500, width: '100%' }}
+        />
       </InfoContainer>
       <BackLink href="https://twitter.com/davidfoxio" target="_blank">
         <img src={me} alt="David Fox" /> Made by David Fox

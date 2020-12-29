@@ -91,6 +91,31 @@ export default function InputForm({
           />
         </label>
       </StyledForm>
+      <h3>Key</h3>
+      <p>
+        <strong>
+          <span id="blue-span">Blue</span> -{' '}
+        </strong>{' '}
+        the savings balance with income applied
+      </p>
+      <p>
+        <strong>
+          <span id="yellow-span">Yellow</span> -{' '}
+        </strong>{' '}
+        the savings balance without income applied
+      </p>
+      <p>
+        <strong>
+          <span id="red-span">Red</span> -{' '}
+        </strong>{' '}
+        the surrender threshold
+      </p>
+      <p>
+        <strong>
+          <span id="green-span">Green</span> -{' '}
+        </strong>{' '}
+        the total income in the forward-looking 12 months
+      </p>
     </div>
   );
 }

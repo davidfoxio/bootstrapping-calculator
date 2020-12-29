@@ -64,12 +64,21 @@ export default function SavingsBalanceChart({
         <YAxis type="number" domain={[0, 'dataMax']} allowDataOverflow />
         <Tooltip />
         <Legend />
-        <Line type="monotone" dataKey="Runway" stroke="#d8d284" dot={false} />
-        <Line type="monotone" dataKey="Balance" stroke="#346de9" dot={false} />
+        <Line
+          type="monotone"
+          dataKey="Runway"
+          stroke="rgb(218, 207, 0)"
+          dot={false}
+        />
+        <Line
+          type="monotone"
+          dataKey="Balance"
+          stroke="rgba(150, 174, 255)"
+          dot={false}
+        />
         <ReferenceLine
           y={surrenderThreshold * monthlyOutgoings}
-          label="Surrender Threshold"
-          stroke="red"
+          stroke="rgba(255, 72, 72)"
           strokeDasharray="3 3"
         />
       </LineChart>
