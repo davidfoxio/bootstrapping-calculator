@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ResponsiveContainer } from 'recharts';
 import SavingsBalanceChart from './SavingsBalanceChart';
 import AnnualIncomeChart from './AnnualIncomeChart';
 
