@@ -10,6 +10,7 @@ import {
   Tooltip,
   Legend,
   ReferenceLine,
+  ResponsiveContainer,
 } from 'recharts';
 
 export default function SavingsBalanceChart({
@@ -46,42 +47,42 @@ export default function SavingsBalanceChart({
   });
 
   return (
-    <div>
+    <div className="savingsBalanceChart">
       <h2 className="chart-title">Savings Balance Chart</h2>
-      <LineChart
-        width={500}
-        height={300}
-        data={data}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis type="number" domain={[0, 'dataMax']} allowDataOverflow />
-        <Tooltip />
-        <Legend />
-        <Line
-          type="monotone"
-          dataKey="Runway"
-          stroke="rgb(218, 207, 0)"
-          dot={false}
-        />
-        <Line
-          type="monotone"
-          dataKey="Balance"
-          stroke="rgba(150, 174, 255)"
-          dot={false}
-        />
-        <ReferenceLine
-          y={surrenderThreshold * monthlyOutgoings}
-          stroke="rgba(255, 72, 72)"
-          strokeDasharray="3 3"
-        />
-      </LineChart>
+      <ResponsiveContainer>
+        <LineChart
+          data={data}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis type="number" domain={[0, 'dataMax']} allowDataOverflow />
+          <Tooltip />
+          <Legend />
+          <Line
+            type="monotone"
+            dataKey="Runway"
+            stroke="rgb(218, 207, 0)"
+            dot={false}
+          />
+          <Line
+            type="monotone"
+            dataKey="Balance"
+            stroke="rgba(150, 174, 255)"
+            dot={false}
+          />
+          <ReferenceLine
+            y={surrenderThreshold * monthlyOutgoings}
+            stroke="rgba(255, 72, 72)"
+            strokeDasharray="3 3"
+          />
+        </LineChart>
+      </ResponsiveContainer>
     </div>
   );
 }

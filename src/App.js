@@ -33,18 +33,19 @@ const InfoContainer = styled.div`
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 5rem;
+  padding-bottom: 50px;
 `;
 
 const InputChartContainer = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 2rem;
-  margin: 1rem;
   flex-wrap: wrap;
   justify-content: center;
   align-self: flex-start;
-  padding: 1rem;
+  width: 100%;
+  overflow: hidden;
   .input-figures {
     max-width: 300px;
     border-radius: 1em 0 1em 0;
@@ -56,13 +57,26 @@ const InputChartContainer = styled.div`
     );
     padding: 1rem;
   }
+  .chart-area {
+    width: 700px;
+    padding-right: 1rem;
+    .annualIncomeChart,
+    .savingsBalanceChart {
+      width: 100%;
+      height: 500px;
+      margin-bottom: 5rem;
+    }
+    @media only screen and (max-width: 755px) {
+      width: 90%;
+    }
+  }
   input {
     padding: 0.5rem;
   }
   @media only screen and (max-width: 755px) {
     .input-figures {
-      width: 100%;
       max-width: 500px;
+      margin: 1rem;
     }
   }
 `;
@@ -137,6 +151,7 @@ export default function App() {
           surrenderThreshold={surrenderThreshold}
           yearlyIncome={yearlyIncome}
           monthlyIncome={monthlyIncome}
+          className="chartArea"
         />
       </InputChartContainer>
       <NotesContainer>

@@ -14,17 +14,14 @@ export default function ChartArea({
 }) {
   return (
     <div className="chart-area">
-      <ResponsiveContainer width="95%" height={400}>
-        <SavingsBalanceChart
-          liquidSavings={liquidSavings}
-          monthlyOutgoings={monthlyOutgoings}
-          monthlyIncomeGrowth={monthlyIncomeGrowth}
-          surrenderThreshold={surrenderThreshold}
-          yearlyIncome={yearlyIncome}
-          monthlyIncome={monthlyIncome}
-        />
-      </ResponsiveContainer>
-
+      <SavingsBalanceChart
+        liquidSavings={liquidSavings}
+        monthlyOutgoings={monthlyOutgoings}
+        monthlyIncomeGrowth={monthlyIncomeGrowth}
+        surrenderThreshold={surrenderThreshold}
+        yearlyIncome={yearlyIncome}
+        monthlyIncome={monthlyIncome}
+      />
       <AnnualIncomeChart
         monthlyIncomeGrowth={monthlyIncomeGrowth}
         yearlyIncome={yearlyIncome}

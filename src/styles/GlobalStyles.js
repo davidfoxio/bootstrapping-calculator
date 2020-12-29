@@ -7,6 +7,14 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     color:#374151;
   }
+  html, body, #root {
+    width: 100%;
+    height: 100%;
+  }
+  .App {
+    width: 100%;
+    height: 100%;
+  }
   h1 {
       text-align: center;
   }

@@ -91,7 +91,7 @@ export default function InputForm({
           />
         </label>
       </StyledForm>
-      <h3>Key</h3>
+      <h3>Charts Key</h3>
       <p>
         <strong>
           <span id="blue-span">Blue</span> -{' '}
@@ -115,6 +115,12 @@ export default function InputForm({
           <span id="green-span">Green</span> -{' '}
         </strong>{' '}
         the total income in the forward-looking 12 months
+      </p>
+      <p>
+        <strong>Horizontal Axis - </strong>months
+      </p>
+      <p>
+        <strong>Vertical Axis - </strong> amount in your currency
       </p>
     </div>
   );
