@@ -18,6 +18,9 @@ const InputChartContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-self: flex-start;
+  .input-figures {
+    max-width: 300px;
+  }
   input {
     padding: 0.5rem;
   }
@@ -137,7 +140,7 @@ export default function App() {
         obcaecati distinctio vero magnam in corrupti molestias, sapiente dolore
         pariatur quis tenetur? Maxime, suscipit soluta.
       </p>
-      <BackLink href="http://davidfox.io" target="_blank">
+      <BackLink href="https://twitter.com/davidfoxio" target="_blank">
         <img src={me} alt="David Fox" /> Made by David Fox
       </BackLink>
     </div>
