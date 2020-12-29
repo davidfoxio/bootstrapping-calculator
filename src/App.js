@@ -1,18 +1,7 @@
 /* eslint-disable no-plusplus */
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import {
-  TwitterTimelineEmbed,
-  TwitterShareButton,
-  TwitterFollowButton,
-  TwitterHashtagButton,
-  TwitterMentionButton,
-  TwitterTweetEmbed,
-  TwitterMomentShare,
-  TwitterDMButton,
-  TwitterVideoEmbed,
-  TwitterOnAirButton,
-} from 'react-twitter-embed';
+import { TwitterTimelineEmbed, TwitterShareButton } from 'react-twitter-embed';
 // Components
 import ChartArea from './components/ChartArea';
 import InputForm from './components/InputForm';
